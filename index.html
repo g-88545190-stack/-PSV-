@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四年级美术：10种美术手法 30题互动测验</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for primary school friendly icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            min-height: 100vh;
+        }
+        .bounce-gentle {
+            animation: bounceGentle 2s infinite;
+        }
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .custom-card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-teal-200 selection:text-teal-900 pb-12">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-teal-100 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-400 to-indigo-500 flex items-center justify-center text-white text-xl shadow-md">
+                    🎨
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-slate-800 leading-tight">四年级美术测验</h1>
+                    <p class="text-xs text-teal-600 font-medium">10种美术手法深度学习</p>
+                </div>
+            </div>
+            <div id="stats-badge" class="hidden flex items-center space-x-2 bg-teal-50 px-3 py-1.5 rounded-full border border-teal-200">
+                <span class="text-xs text-teal-700 font-medium"><i class="fa-solid fa-star text-amber-400 mr-1"></i>得分: <span id="current-score" class="font-bold text-teal-800">0</span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 pt-6">
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="bg-white rounded-3xl p-6 sm:p-10 custom-card-shadow text-center space-y-6 transition-all duration-300">
+            <div class="inline-block p-4 bg-teal-100 rounded-full text-4xl mb-2 bounce-gentle">
+                🎨 🖌️ ✂️
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">四年级美术：10种美术手法 30题互动测验</h2>
+            <p class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+                准备好检验你的美术知识了吗？本次测验共包含 <span class="font-bold text-teal-600">30 道精心设计的选择题</span>，涵盖课本中的 10 种核心美术技法。每题都有详细解答，帮助你轻松复习！
+            </p>
+
+            <!-- Techniques Badges List -->
+            <div class="bg-slate-50 p-4 rounded-2xl text-left border border-slate-100">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-book-open mr-1"></i> 涵盖的10种美术手法：</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-medium text-slate-700">
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">1.</span> 湿重叠</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">2.</span> 马赛克拼贴</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">3.</span> 招贴设计</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">4.</span> 孔板画</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">5.</span> 综合材料拼贴版画</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">6.</span> 墨流浮水染</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">7.</span> 透视画馆</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">8.</span> 拼凑艺术</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">9.</span> 雕刻艺术</div>
+                    <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center"><span class="mr-2">10.</span> 纸浆艺术</div>
+                </div>
+            </div>
+
+            <button onclick="startQuiz()" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-teal-200 hover:scale-105 transition-all duration-200 active:scale-95">
+                🚀 开始测验
+            </button>
+        </div>
+
+        <!-- QUIZ CONTAINER -->
+        <div id="quiz-container" class="hidden space-y-6">
+            
+            <!-- Progress & Timer Bar -->
+            <div class="bg-white rounded-2xl p-4 custom-card-shadow space-y-2">
+                <div class="flex justify-between items-center text-sm font-semibold text-slate-600">
+                    <span><i class="fa-solid fa-list-check text-teal-500 mr-1"></i> 问题 <span id="current-q-num" class="text-teal-600 font-bold">1</span> / 30</span>
+                    <span id="technique-badge" class="px-3 py-1 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">湿重叠</span>
+                </div>
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-gradient-to-r from-teal-400 to-emerald-500 h-full w-0 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 custom-card-shadow space-y-6">
+                
+                <!-- Visual Icon / Art Illustration Box -->
+                <div id="art-illustration" class="w-full py-6 bg-gradient-to-r from-teal-50 to-indigo-50 rounded-2xl flex flex-col items-center justify-center border border-teal-100 text-center px-4 space-y-2">
+                    <i id="art-icon" class="fa-solid fa-paintbrush text-4xl text-teal-500 mb-1"></i>
+                    <p id="art-desc" class="text-xs text-slate-500 font-medium">湿重叠技法：在未干的水彩画纸上融入新色彩</p>
+                </div>
+
+                <!-- Question Text -->
+                <h3 id="question-text" class="text-lg sm:text-xl font-bold text-slate-800 leading-snug">
+                    问题加载中...
+                </h3>
+
+                <!-- Options Grid -->
+                <div id="options-container" class="grid grid-cols-1 gap-3">
+                    <!-- Option items generated via JS -->
+                </div>
+
+                <!-- Explanation Box -->
+                <div id="explanation-box" class="hidden p-4 rounded-2xl border transition-all duration-200">
+                    <div class="flex items-start space-x-3">
+                        <div id="explanation-icon" class="text-2xl mt-0.5"></div>
+                        <div class="space-y-1">
+                            <h4 id="explanation-title" class="font-bold text-sm"></h4>
+                            <p id="explanation-text" class="text-xs sm:text-sm leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <button id="next-btn" onclick="nextQuestion()" class="hidden w-full py-3.5 bg-slate-800 text-white font-bold rounded-2xl shadow-md hover:bg-slate-700 transition-all duration-200 flex items-center justify-center space-x-2">
+                    <span>下一题</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="hidden bg-white rounded-3xl p-6 sm:p-10 custom-card-shadow text-center space-y-6">
+            <div class="inline-block p-4 bg-amber-100 text-amber-600 rounded-full text-5xl mb-2 bounce-gentle">
+                🏆
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">测试完成！🎉</h2>
+            <p id="result-subtitle" class="text-slate-600 text-sm">你太棒了！以下是你的测验结果：</p>
+
+            <!-- Score Display Box -->
+            <div class="p-6 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-3xl text-white space-y-2 shadow-lg">
+                <p class="text-xs uppercase tracking-wider text-teal-100 font-semibold">最终得分</p>
+                <div class="text-5xl font-black"><span id="final-score">0</span> <span class="text-2xl font-normal text-teal-200">/ 30</span></div>
+                <p id="accuracy-rate" class="text-sm text-teal-100">正确率：0%</p>
+            </div>
+
+            <!-- Encouragement Message -->
+            <div id="encouragement-box" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-sm text-slate-700">
+                评语加载中...
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <button onclick="restartQuiz()" class="flex-1 py-4 bg-teal-500 text-white font-bold rounded-2xl shadow-md hover:bg-teal-600 transition-all">
+                    🔄 重新测验
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // 30题完整测验题库 (每个手法3题)
+        const quizData = [
+            // 1. 湿重叠 (Wet-on-wet)
+            {
+                technique: "湿重叠",
+                icon: "fa-paint-brush",
+                desc: "水彩画湿重叠：趁湿在画纸上刷色与融合",
+                question: "1. 在水彩画中，先将画纸局部蘸湿，趁未干时涂上另一种深浅颜色的技法称为“湿重叠”。这种技法最显著的视觉效果是什么？",
+                options: ["A. 边缘十分清晰锋利", "B. 色彩自然晕染与柔和过渡", "C. 产生立体凹凸纹理", "D. 形成颗粒状马赛克效果"],
+                correct: 1,
+                explanation: "正确答案是 B。湿重叠（Wet-on-wet）是在纸张未干时上色，水分会让两种颜色相互渗透，呈现自然晕染和柔和过渡的特殊水彩效果。"
+            },
+            {
+                technique: "湿重叠",
+                icon: "fa-cloud-sun",
+                desc: "湿重叠常用于表现天空、云彩或水面",
+                question: "2. 如果你想用水彩画一幅柔和的“夕阳霞光”或“湿润的云彩”，最适合采用以下哪种技法？",
+                options: ["A. 雕刻法", "B. 孔板喷印", "C. 湿重叠法", "D. 纸浆塑形"],
+                correct: 2,
+                explanation: "正确答案是 C。湿重叠非常适合表现大自然中色彩渐变、无明显硬边缘的景物，如夕阳、云彩和湖面倒影。"
+            },
+            {
+                technique: "湿重叠",
+                icon: "fa-droplet",
+                desc: "湿重叠操作需要控制画笔和纸张的水分",
+                question: "3. 在进行“湿重叠”创作时，如果画纸上的水分过多积水，最容易导致什么现象？",
+                options: ["A. 颜料过度流淌形成水痕斑块", "B. 纸张瞬间干透", "C. 无法上色", "D. 产生纸浆效果"],
+                correct: 0,
+                explanation: "正确答案是 A。水分过多会导致颜料失去控制而肆意流淌，形成不均匀的水痕。因此控制笔和纸的水分是湿重叠的关键。"
+            },
+
+            // 2. 马赛克拼贴 (Mosaic)
+            {
+                technique: "马赛克拼贴",
+                icon: "fa-border-all",
+                desc: "马赛克拼贴：用小块卡纸或碎粒按间隙排列",
+                question: "4. 马赛克拼贴（Mosaic）是一种古典而有趣的艺术手法。它的核心拼接特征是什么？",
+                options: ["A. 将大张纸直接贴在底板上", "B. 将小块材料按一定间隙有规律地排列", "C. 用雕刻刀削出造型", "D. 在水面上漂浮颜料"],
+                correct: 1,
+                explanation: "正确答案是 B。马赛克拼贴的核心在于使用许多小块材料（纸片、瓷砖碎、吸管碎等），有间隔地拼贴组合出整体图案。"
+            },
+            {
+                technique: "马赛克拼贴",
+                icon: "fa-palette",
+                desc: "马赛克拼贴中的配色与对比",
+                question: "5. 在制作纸质马赛克拼贴画时，为了让主体的图案更加突出清晰，最有效的色彩策略是什么？",
+                options: ["A. 主体与背景使用完全相同的颜色", "B. 主体与背景使用对比鲜明的色彩", "C. 不使用任何彩色纸", "D. 将纸片全叠在一起"],
+                correct: 1,
+                explanation: "正确答案是 B。强烈的明暗或冷暖色对比，能让分散的小马赛克纸片在视觉上聚集成清晰的主体图案。"
+            },
+            {
+                technique: "马赛克拼贴",
+                icon: "fa-shapes",
+                desc: "马赛克拼贴材料多样性",
+                question: "6. 除了彩色卡纸碎块外，以下哪种生活常见材料也常被用于小学美术的马赛克拼贴创作？",
+                options: ["A. 剪碎的彩色吸管或蛋壳碎", "B. 水彩颜料水", "C. 粘土水", "D. 木雕刀"],
+                correct: 0,
+                explanation: "正确答案是 A。马赛克拼贴可以使用多种材料，如蛋壳碎、吸管段、豆类、废旧杂志碎片等，只要能分割成小块即可。"
+            },
+
+            // 3. 招贴设计 (Poster)
+            {
+                technique: "招贴",
+                icon: "fa-bullhorn",
+                desc: "招贴画（Poster）：视觉吸引力强，传达明确信息",
+                question: "7. 招贴（Poster Design）通常用于宣传活动或传递信息。为了在远处第一时间吸引大众注意力，招贴画在视觉上最需要具备什么特征？",
+                options: ["A. 字体越小越好", "B. 主题鲜明、色彩对比强烈、文字精炼", "C. 全用灰色，不画图画", "D. 画面塞满密密麻麻的小字"],
+                correct: 1,
+                explanation: "正确答案是 B。招贴画（海报）必须具备强烈的视觉冲击力和简洁的信息，才能让路人在极短时间内获取有效宣传信息。"
+            },
+            {
+                technique: "招贴",
+                icon: "fa-eye",
+                desc: "招贴中的视觉中心（Visual Center）",
+                question: "8. 招贴设计中的“视觉中心”（Visual Focus）主要起什么作用？",
+                options: ["A. 引导观众的目光第一时间聚焦在核心主题上", "B. 隐藏最重要的信息", "C. 装饰画框边缘", "D. 浪费画面空白"],
+                correct: 0,
+                explanation: "正确答案是 A。视觉中心是画面中最吸睛的部分，通常由最大型的图片、强烈的颜色或醒目的标题构成。"
+            },
+            {
+                technique: "招贴",
+                icon: "fa-font",
+                desc: "招贴中的图文搭配",
+                question: "9. 四年级学生设计一张“校园环保运动”招贴画时，以下哪种图文搭配最合理？",
+                options: ["A. 只有文字，没有任何图样", "B. 画满小动物，但没有任何标语文字", "C. 醒目的“爱护绿化”标语配合简洁直观的树木手掌图形", "D. 画一幅水彩风景，但不说明任何主题"],
+                correct: 2,
+                explanation: "正确答案是 C。招贴画是图形与文字结合的艺术，标语与图画相辅相成才能完美达成宣传效果。"
+            },
+
+            // 4. 孔板画 (Stencil)
+            {
+                technique: "孔板画",
+                icon: "fa-stamp",
+                desc: "孔板画：利用镂空模板和海绵弹印复制图案",
+                question: "10. 在制作孔板画（Stencil Print）时，我们先在卡纸上镂空出图案。以下哪种工具最常用于孔板画的拓印上色？",
+                options: ["A. 高密度海绵块或拓印刷", "B. 雕刻刀", "C. 铅笔刨", "D. 液体白胶"],
+                correct: 0,
+                explanation: "正确答案是 A。海绵块吸取适量颜料后，在镂空的模板孔洞上轻轻弹印（拍打），能印出轮廓清晰且均匀的图案。"
+            },
+            {
+                technique: "孔板画",
+                icon: "fa-copy",
+                desc: "孔板画具有可重复复制的特性",
+                question: "11. 相比于直接用画笔手绘，使用“孔板画”技法最大的优势和特点是什么？",
+                options: ["A. 能够轻松重复复制出多个形状完全相同的图案", "B. 可以立体雕刻", "C. 只能使用黑白两色", "D. 不需要使用颜料"],
+                correct: 0,
+                explanation: "正确答案是 A。孔板画（Stencil）属于漏印版画，最大的好处就是模板做好后可以快速、准确地重复印制多个一致的图案。"
+            },
+            {
+                technique: "孔板画",
+                icon: "fa-triangle-exclamation",
+                desc: "孔板画印制时的注意事项",
+                question: "12. 制作孔板画拓印时，如果发现印出来的图案边缘模糊、颜料在纸上渗开，最可能的原因是什么？",
+                options: ["A. 海绵上的颜料水分太湿，且模板未贴紧底纸", "B. 海绵太干", "C. 用的卡纸太厚", "D. 拓印速度太快"],
+                correct: 0,
+                explanation: "正确答案是 A。颜料太湿会导致水分顺着模板边缘渗入下方，没有按紧模板也会导致渗色，使得边缘模糊。"
+            },
+
+            // 5. 综合材料的拼贴版画 (Collagraph)
+            {
+                technique: "综合材料的拼贴版画",
+                icon: "fa-layer-group",
+                desc: "拼贴版画：收集瓦楞纸、毛线、气泡膜做成凹凸版面",
+                question: "13. 制作“综合材料的拼贴版画”（Collagraph）时，收集瓦楞纸、毛线、气泡膜、树叶等不同材料粘贴在底板上，这一步骤的主要目的是什么？",
+                options: ["A. 制造丰富多样的凹凸肌理与表面纹理", "B. 让版画变沉重", "C. 直接当成雕刻材料", "D. 替代颜料"],
+                correct: 0,
+                explanation: "正确答案是 A。综合材料版画利用生活材料自带的天然纹理（如瓦楞纸的条纹、气泡膜的圆点），在滚墨拓印后能产生极具质感的效果。"
+            },
+            {
+                technique: "综合材料的拼贴版画",
+                icon: "fa-scroll",
+                desc: "拼贴版画的刷墨与拓印过程",
+                question: "14. 综合材料拼贴底板制作完成后，将其印刷到纸张上之前，必须进行哪一步关键操作？",
+                options: ["A. 用水浸泡底板", "B. 在版面均匀滚刷或涂抹版画颜料", "C. 用雕刻刀挖空", "D. 用火烘干底纸"],
+                correct: 1,
+                explanation: "正确答案基 B。必须先在拼贴好的凹凸版面上均匀涂刷或滚上颜料，然后覆盖宣纸/卡纸进行压印拓印。"
+            },
+            {
+                technique: "综合材料的拼贴版画",
+                icon: "fa-fingerprint",
+                desc: "肌理感是拼贴版画的核心表现力",
+                question: "15. 以下哪种材料在拼贴版画中拓印时，最容易产生“网格或微小圆点”的丰富纹理？",
+                options: ["A. 光滑的塑料片", "B. 塑料气泡膜（Bubble Wrap）或纱布", "C. 普通平整卡纸", "D. 玻璃片"],
+                correct: 1,
+                explanation: "正确答案是 B。塑料气泡膜、水果网套和纱布等都具有明显的立体网格纹理，拓印出的肌理效果非常显著。"
+            },
+
+            // 6. Suminagashi 墨流浮水染
+            {
+                technique: "墨流浮水染",
+                icon: "fa-water",
+                desc: "Suminagashi墨流浮水染：颜料漂浮在水面上形成水纹",
+                question: "16. Suminagashi（墨流浮水染）是一种传统的染印艺术。在创作过程中，墨水或颜料首先被滴加在什么介质的表面？",
+                options: ["A. 清澈的水面", "B. 干燥的木板上", "C. 橡皮擦上", "D. 粘土上"],
+                correct: 0,
+                explanation: "正确答案是 A。Suminagashi（墨流）是利用水表面的张力，将墨水滴在水面上漂浮扩散，形成独特的水纹图案。"
+            },
+            {
+                technique: "墨流浮水染",
+                icon: "fa-wind",
+                desc: "浮水染通过轻吹或搅拌形成大自然水纹",
+                question: "17. 在 Suminagashi 创作中，想要让水面上的墨圈变成流动的大理石纹或年轮纹理，可以通过什么方法？",
+                options: ["A. 用嘴轻吹水面或用细木棒轻轻引导水流", "B. 用雕刻刀划水", "C. 快速剧烈摇晃水盆", "D. 加入大量的粘土"],
+                correct: 0,
+                explanation: "正确答案是 A。用细木棒、羽毛轻轻划过水面，或者用嘴轻吹，就能使水面漂浮的颜料拉扯出千变万化的流动纹理。"
+            },
+            {
+                technique: "墨流浮水染",
+                icon: "fa-file-import",
+                desc: "将水面纹理完美拓印转移到纸张上",
+                question: "18. 水面上的墨纹形成后，我们如何将这个美丽的图案永久保存下来？",
+                options: ["A. 慢慢把水倒掉", "B. 将吸水性好的纸张平铺覆盖在水面上吸附图案", "C. 用拍照后撕掉水面", "D. 等水自然蒸发干"],
+                correct: 1,
+                explanation: "正确答案是 B。将吸水纸（如宣纸或特制卡纸）轻轻平铺在水面上，纸张会瞬间吸附水面上的颜料纹理，提起晾干即可。"
+            },
+
+            // 7. 透视画馆 (Diorama)
+            {
+                technique: "透视画馆",
+                icon: "fa-box-open",
+                desc: "透视画馆（Diorama）：盒内的立体空间微缩景观",
+                question: "19. 制作“透视画馆”（Diorama）模型时，学生通常会在盒子里将景物分层放置。这种创作手法的主要目的是表现什么？",
+                options: ["A. 三维空间的立体感与前后纵深感（景深）", "B. 平面印制效果", "C. 水彩晕染", "D. 纸浆混合过程"],
+                correct: 0,
+                explanation: "正确答案是 A。透视画馆（Diorama）利用纸盒空间，将人物或景物分为前景、中景、远景层次立起来，营造强烈的立体空间感。"
+            },
+            {
+                technique: "透视画馆",
+                icon: "fa-mountain",
+                desc: "透视画馆的前景、中景、远景布局",
+                question: "20. 在制作一个“海底世界”透视画馆时，为了符合视线透视原理，远景的海洋深处背景通常应该怎样处理？",
+                options: ["A. 贴在最靠近盒口的前方", "B. 绘制在最里侧的盒壁上，色彩较浅淡", "C. 用雕刻刀刻掉", "D. 摆放最大的立体海龟模型"],
+                correct: 1,
+                explanation: "正确答案是 B。盒子的最里侧代表远景，使用较浅淡的颜色可以利用“空气透视”增强空间的深远感。"
+            },
+            {
+                technique: "透视画馆",
+                icon: "fa-cube",
+                desc: "透视画馆的立体固定",
+                question: "21. 在透视画馆中，如何让纸剪出来的小树或小动物稳定“站立”在盒底？",
+                options: ["A. 底部留出折叠脚（Tab）粘在底面或用小粘土座支撑", "B. 用水冲湿卡纸", "C. 靠在空气中不固定", "D. 全部平铺贴在底面上"],
+                correct: 0,
+                explanation: "正确答案是 A。在剪纸元件底部保留一个小折角（Tab）涂胶粘牢，或者用一小块粘土固定，就能让平面卡纸直立起来。"
+            },
+
+            // 8. 拼凑艺术 (Assemblage)
+            {
+                technique: "拼凑",
+                icon: "fa-cubes-stacked",
+                desc: "拼凑艺术（Assemblage）：将三维废旧物品组合成新艺术品",
+                question: "22. 美术中的“拼凑”（Assemblage）艺术与普通的平面剪贴画（Collage）最大的不同点在于：",
+                options: ["A. 拼凑主要使用三维立体的废旧物件或实物组合", "B. 拼凑只能使用纸张", "C. 拼凑是在水里画画", "D. 拼凑属于画笔绘画"],
+                correct: 0,
+                explanation: "正确答案是 A。Assemblage（拼凑/集锦艺术）是将现成的立体物件（如旧齿轮、瓶盖、小木块、塑料零件等）组合构造出立体艺术品。"
+            },
+            {
+                technique: "拼凑",
+                icon: "fa-recycle",
+                desc: "废物利用与艺术重构",
+                question: "23. 制作“拼凑”（Assemblage）机器人作品时，小明收集了旧废瓶盖、卷纸筒、废电线和纽扣。这体现了拼凑艺术的什么理念？",
+                options: ["A. 赋予日常废旧物品全新的艺术造型与生命", "B. 必须购买昂贵的新材料", "C. 破坏环境", "D. 练习平面绘画"],
+                correct: 0,
+                explanation: "正确答案是 A。拼凑艺术的核心魅力之一就是把生活中的废旧三维物品进行创意重组，变废为宝。"
+            },
+            {
+                technique: "拼凑",
+                icon: "fa-screwdriver-wrench",
+                desc: "拼凑艺术的固定连接手段",
+                question: "24. 在进行立体拼凑（Assemblage）创作时，将塑料瓶盖、木块和金属丝等不同材质稳固连接在一起，最常用且安全的工具是：",
+                options: ["A. 热熔胶枪、白胶或双面胶带", "B. 雕刻刀削切", "C. 用水浸泡", "D. 用水彩笔涂抹"],
+                correct: 0,
+                explanation: "正确答案是 A。因为拼凑涉及多种不同材质的立体物，使用胶水、热熔胶或扎带是实现稳固连接的关键。"
+            },
+
+            // 9. 雕刻 (Carving)
+            {
+                technique: "雕刻",
+                icon: "fa-gem",
+                desc: "雕刻（Carving）：通过削去多余材料展现造型的减法艺术",
+                question: "25. 雕刻（Carving）被艺术界称为典型的“减法艺术”。这种说法的含义是：",
+                options: ["A. 通过逐渐削去或凿除多余的材料来显现造型", "B. 越雕材料越多", "C. 用胶水把材料粘在一起", "D. 减少画笔的使用"],
+                correct: 0,
+                explanation: "正确答案是 A。雕刻是在一块完整的整料上（如橡皮、肥皂、木头），去除掉不需要的部分，从而留下内部造型，因此称为减法艺术。"
+            },
+            {
+                technique: "雕刻",
+                icon: "fa-shield-halved",
+                desc: "雕刻时的安全规范",
+                question: "26. 四年级美术课进行肥皂或橡皮雕刻练习时，为了保证操作安全，正确的持刀与雕刻方向是：",
+                options: ["A. 刀口朝向自己的手和身体削切", "B. 刀口朝外，向远离身体和手部的方向削切", "C. 快速用力乱砍", "D. 用刀尖对着同学"],
+                correct: 1,
+                explanation: "正确答案是 B。安全第一！雕刻时用力方向务必朝外、朝向远离手部和身体的方向，防止滑刀伤手。"
+            },
+            {
+                technique: "雕刻",
+                icon: "fa-pen-ruler",
+                desc: "雕刻创作的第一步：起稿",
+                question: "27. 在对一块肥皂进行雕刻创作前，第一步最关键的基础准备工作是什么？",
+                options: ["A. 用铅笔或水彩笔在肥皂表面画出要雕刻的外轮廓线（起稿）", "B. 直接拿刀深挖", "C. 把肥皂泡水烂掉", "D. 涂满红颜料"],
+                correct: 0,
+                explanation: "正确答案是 A。雕刻前必须先在材料表面画出清晰的轮廓起稿图，以此为界限才能精准决定哪些部分需要削去。"
+            },
+
+            // 10. 纸浆艺术 (Bakul Siah / Paper Mache)
+            {
+                technique: "纸浆艺术",
+                icon: "fa-basket-shopping",
+                desc: "纸浆艺术（Bakul Siah）：废纸撕碎混合白胶塑形",
+                question: "28. 在制作纸浆艺术（如传统黑漆纸篮 Bakul Siah 模型）时，配制纸浆（Paper Mache）的核心原材料主要包括：",
+                options: ["A. 撕碎的报纸/废纸屑、水和白胶", "B. 石头和沙子", "C. 塑料片和雕刻刀", "D. 油漆和水彩笔"],
+                correct: 0,
+                explanation: "正确答案是 A。将废纸撕碎浸泡软化后打碎，加入白胶/淀粉糊混合调配，就能制成具有粘性和可塑性的纸浆泥。"
+            },
+            {
+                technique: "纸浆艺术",
+                icon: "fa-sun",
+                desc: "纸浆风干硬化过程",
+                question: "29. 塑造好纸浆作品（如 Bakul Siah 纸篮）后，在进行彩绘和涂漆上色之前，必须经过哪一步关键等待？",
+                options: ["A. 放置在通风处彻底晾干硬化", "B. 趁湿立刻画画", "C. 放入水里清洗", "D. 用雕刻刀切碎"],
+                correct: 0,
+                explanation: "正确答案是 A。湿纸浆富含水分，必须彻底风干硬化成型后，表面才能变硬变结实，此时才能顺畅地上色彩绘。"
+            },
+            {
+                technique: "纸浆艺术",
+                icon: "fa-brush",
+                desc: "传统黑漆纸篮 Bakul Siah 的色彩艺术",
+                question: "30. 马来西亚传统黑漆纸篮（Bakul Siah）在完成纸浆打底后，经典的装饰彩绘风格通常包含哪些特征？",
+                options: ["A. 以红黑为主色调，带有华丽的金色花纹或吉祥图样", "B. 全纯白色无任何花纹", "C. 只贴马赛克碎片", "D. 浸泡在墨水里"],
+                correct: 0,
+                explanation: "正确答案是 A。传统 Bakul Siah（黑漆纸篮）是华裔传统手工艺品，以黑色和红色漆料打底，配以精致的金色花鸟或吉祥图案。"
+            }
+        ];
+
+        // State variables
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        // Elements
+        const startScreen = document.getElementById('start-screen');
+        const quizContainer = document.getElementById('quiz-container');
+        const resultScreen = document.getElementById('result-screen');
+        const statsBadge = document.getElementById('stats-badge');
+
+        const currentQNumEl = document.getElementById('current-q-num');
+        const techniqueBadgeEl = document.getElementById('technique-badge');
+        const progressBarEl = document.getElementById('progress-bar');
+        
+        const artIconEl = document.getElementById('art-icon');
+        const artDescEl = document.getElementById('art-desc');
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainerEl = document.getElementById('options-container');
+        
+        const explanationBoxEl = document.getElementById('explanation-box');
+        const explanationIconEl = document.getElementById('explanation-icon');
+        const explanationTitleEl = document.getElementById('explanation-title');
+        const explanationTextEl = document.getElementById('explanation-text');
+        
+        const nextBtnEl = document.getElementById('next-btn');
+        const currentScoreEl = document.getElementById('current-score');
+
+        // Start Quiz Function
+        function startQuiz() {
+            startScreen.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+            statsBadge.classList.remove('hidden');
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            currentScoreEl.textContent = score;
+
+            loadQuestion();
+        }
+
+        // Load Single Question
+        function loadQuestion() {
+            answered = false;
+            const q = quizData[currentQuestionIndex];
+
+            // Update Progress & Badges
+            currentQNumEl.textContent = currentQuestionIndex + 1;
+            techniqueBadgeEl.textContent = q.technique;
+            progressBarEl.style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+
+            // Update Visual Header
+            artIconEl.className = `fa-solid ${q.icon} text-4xl text-teal-500 mb-1`;
+            artDescEl.textContent = q.desc;
+
+            // Update Text
+            questionTextEl.textContent = q.question;
+
+            // Reset Options Container
+            optionsContainerEl.innerHTML = '';
+            explanationBoxEl.classList.add('hidden');
+            nextBtnEl.classList.add('hidden');
+
+            // Render Options
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-teal-400 hover:bg-teal-50/50 transition-all font-medium text-slate-700 text-sm sm:text-base flex justify-between items-center`;
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-slate-300 text-lg option-icon"></i>`;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainerEl.appendChild(btn);
+            });
+        }
+
+        // Select Answer
+        function selectAnswer(selectedIndex, selectedBtn) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuestionIndex];
+            const optionButtons = optionsContainerEl.children;
+
+            // Disable all buttons
+            for (let btn of optionButtons) {
+                btn.classList.add('cursor-not-allowed');
+                btn.onclick = null;
+            }
+
+            if (selectedIndex === q.correct) {
+                // Correct
+                score++;
+                currentScoreEl.textContent = score;
+                
+                selectedBtn.className = "w-full text-left p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-sm sm:text-base flex justify-between items-center shadow-sm";
+                selectedBtn.querySelector('.option-icon').className = "fa-solid fa-circle-check text-emerald-500 text-xl";
+
+                // Show Explanation Box
+                explanationBoxEl.className = "p-4 rounded-2xl border bg-emerald-50 border-emerald-200 text-emerald-800 transition-all duration-200";
+                explanationIconEl.innerHTML = "🎉";
+                explanationTitleEl.textContent = "回答正确！";
+                explanationTitleEl.className = "font-bold text-sm text-emerald-800";
+            } else {
+                // Wrong
+                selectedBtn.className = "w-full text-left p-4 rounded-2xl border-2 border-rose-400 bg-rose-50 text-rose-900 font-medium text-sm sm:text-base flex justify-between items-center shadow-sm";
+                selectedBtn.querySelector('.option-icon').className = "fa-solid fa-circle-xmark text-rose-500 text-xl";
+
+                // Highlight Correct One
+                const correctBtn = optionButtons[q.correct];
+                correctBtn.className = "w-full text-left p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-sm sm:text-base flex justify-between items-center";
+                correctBtn.querySelector('.option-icon').className = "fa-solid fa-circle-check text-emerald-500 text-xl";
+
+                // Show Explanation Box
+                explanationBoxEl.className = "p-4 rounded-2xl border bg-rose-50 border-rose-200 text-rose-900 transition-all duration-200";
+                explanationIconEl.innerHTML = "💡";
+                explanationTitleEl.textContent = "再接再厉！正确答案看这里：";
+                explanationTitleEl.className = "font-bold text-sm text-rose-800";
+            }
+
+            explanationTextEl.textContent = q.explanation;
+            explanationBoxEl.classList.remove('hidden');
+
+            // Show Next Button
+            nextBtnEl.classList.remove('hidden');
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtnEl.querySelector('span').textContent = "查看结果 🏆";
+            }
+        }
+
+        // Next Question
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Show Results
+        function showResults() {
+            quizContainer.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+
+            const finalScoreEl = document.getElementById('final-score');
+            const accuracyRateEl = document.getElementById('accuracy-rate');
+            const encouragementBoxEl = document.getElementById('encouragement-box');
+
+            finalScoreEl.textContent = score;
+            const accuracy = Math.round((score / quizData.length) * 100);
+            accuracyRateEl.textContent = `正确率：${accuracy}%`;
+
+            // Encouragement message based on score
+            if (accuracy === 100) {
+                encouragementBoxEl.innerHTML = "<p class='font-bold text-emerald-600 text-base mb-1'>🌟 简直是小小艺术家！太了不起了！</p><p>你完美掌握了四年级美术全部 10 种美术技法，继续保持对艺术的热爱吧！</p>";
+            } else if (accuracy >= 80) {
+                encouragementBoxEl.innerHTML = "<p class='font-bold text-teal-600 text-base mb-1'>👏 表现非常优秀！</p><p>你对绝大多数美术手法都十分熟悉，是个非常有美术天赋的学生！</p>";
+            } else if (accuracy >= 60) {
+                encouragementBoxEl.innerHTML = "<p class='font-bold text-amber-600 text-base mb-1'>👍 顺利及格，做的不错！</p><p>你已经掌握了大部分概念，可以对照做错的题目重新温习一下哦。</p>";
+            } else {
+                encouragementBoxEl.innerHTML = "<p class='font-bold text-rose-600 text-base mb-1'>💪 不要气馁，加油！</p><p>美术手法丰富多样，再多看几遍题目解析，重新挑战一次吧！你一定行！</p>";
+            }
+        }
+
+        // Restart
+        function restartQuiz() {
+            resultScreen.classList.add('hidden');
+            startQuiz();
+        }
+    </script>
+</body>
+</html>
